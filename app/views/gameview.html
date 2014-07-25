@@ -1,0 +1,63 @@
+<div class="container">
+  <h1> Divide and Vanish!</h1> 
+  <br>
+  <p>
+      Can you bring all the numbers to 1? Drag two numbers together to divide them by their lowest common divisor. Continue your path from where you left off and try to make all the numbers equal to 1.
+  </p>
+  <h2> Level {{currentLevel+1}} </h2>
+
+  <div class="btn-group center-block" style="float:none; width:210px">
+    <button class="btn btn-default" ng-click="undo()"> Undo </button>
+    <button class="btn btn-default" ng-click="reset()"> Reset </button>
+    <a class="btn btn-default" role="button" href='/#/levels'> Back </a>
+  </div>
+
+  <h3 ng-show = "loseFlag"> Sorry, it seems you have reached a dead end. Try again? </h3>
+  <h2 ng-show = "winFlag"> Congratulations! You won!</h2>
+  <h2 ng-show = "winFlag"> 
+    <a href="{{'/#/levels/' + (currentLevel+2)}}"> Next level </a>
+  </h2>
+  <br>
+  <div>
+    <div id="buttonGroup" class="animate"
+         ng-repeat="number in numbers track by $index">
+      <div class="numberBox hideAnim" 
+           drop="handleDrop" droppable draggable
+           id={{$index}}
+           ng-class = "{'active': (prev==$index && !winFlag)}">
+        {{number+' '}} 
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <!--History module-->
+  <div>
+    <div class="animate" ng-repeat="(age,state) in hist">
+      <div id="buttonGroup" class="animate"
+           ng-repeat="nr in state track by $index">
+        <div class="numberBox hideAnim" 
+             ng-class="{'active':$index==histPrev[age]}"
+             style="display:block!important">
+          {{nr+' '}}
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+<!--End of History module -->
+
+<script>
+
+  // document.body.addEventListener('touchstart', function(event) {
+  //   if(event.target.id == "buttonGroup") event.preventDefault();
+  // },false);
+
+  document.body.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+  },false);
+
+</script> 
+
+

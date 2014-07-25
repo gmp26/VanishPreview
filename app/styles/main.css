@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+h1, h2, h3, p {
+  text-align: center;
+}
+p {
+  width: 70%;
+  margin-left:auto;
+  margin-right:auto;
+}
+#footer {
+  position: absolute;
+  bottom: 15px;
+  text-align: center;
+  width: 100%;
+}
+#list-item {
+  text-align:center;
+  font-size: 14 pt;
+}
+#lvlButton {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  position: relative;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/*#buttonGroup {
+  width: 70%;
+  margin-left:auto;
+  margin-right:auto;
+}*/
+/*
+#centered {
+  text-align:center;
+}
+*/
+.numberBox {
+/*  width: 40px;
+  height: 40px;
+*/
+  border: 15px;
+  border-radius: 5px;
+  background: teal;
+  color: white;/*maybe not the best color? Play around with color schemes*/
+  /*position: relative;*/
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  margin-left: 40px;
+  margin-top: 10px;
+  font-size: x-large;
+  text-align: center;
+  display: block!important;
+}
+.active {
+  background: yellow;
+  color: black;
+}
+.over {
+  background: green;
+}
+br {
+  clear: both;
+}
+
+.hideAnim {
+  
+    -webkit-transition: all linear 0.7s;
+    -moz-transition: all linear 0.7s;
+    -ms-transition: all linear 0.7s;
+    -o-transition: all linear 0.7s;
+    transition: all linear 0.7s;
+    position: relative;
+    opacity: 1;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space:nowrap;
+    /*width: 40px;*/
+}
+
+.hideAnim.ng-hide-add,
+.hideAnim.ng-hide-remove {
+  display:block!important;
+}
+
+.hideAnim.ng-hide {
+  opacity: 0;
+  height: 0px;
+  width: 40px;
+}
+
+.animate.ng-enter, 
+.animate.ng-leave
+{ 
+	-webkit-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-moz-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-ms-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-o-transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	transition: 700ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	position: relative;
+	/*display: block!important;*/
+	overflow: hidden;
+	text-overflow: clip;
+	white-space:nowrap;
+        /*height: 40px;*/
+} 
+
+.animate.ng-leave.animate.ng-leave-active,
+.animate.ng-enter {
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+}
+
+.animate.ng-enter.ng-enter-active, 
+.animate.ng-leave {
+	opacity: 1;
+	width: 40px;
+	height: 40px;
+}
